@@ -4,28 +4,26 @@ import Immutable from 'seamless-immutable'
 /* Types & Action Creators */
 
 const { Types, Creators } = createActions({
-  charactersRequest: ['results'],
-  charactersSuccess: ['char']
+  // get List Client
+  charListRequest: null,
+  charListSuccess: ['data']
 })
 
-export const CharactersTypes = Types
+export const CharListTypes = Types
 export default Creators
 
 /* Initial State */
 
 export const INITIAL_STATE = Immutable({
-  data: {}
+  data: []
 })
 
 /* Reducers */
 
-export const charListSuccess = (state, { data }) => {
-  console.log(data)
-  return state.merge({ data })
-}
+export const charsList = (state, { data }) => state.merge({ data })
 
 /* Reducers to types */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [Types.CHARACTERS_SUCCESS]: charListSuccess
+  [Types.CHAR_LIST_SUCCESS]: charsList
 })

@@ -1,8 +1,8 @@
 import { all, takeLatest } from 'redux-saga/effects'
 
-import { getCharList } from './characters'
-import { CharactersTypes } from '../ducks/characters'
+import { getList } from './charList'
+import { CharListTypes } from '../ducks/charList'
 
 export default function* rootSaga() {
-  yield all([takeLatest(CharactersTypes.CHARACTERS_REQUEST, getCharList)])
+  yield all([takeLatest(CharListTypes.CHAR_LIST_REQUEST, getList)])
 }

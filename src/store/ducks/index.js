@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 
-import { reducer as characters } from './characters'
+import { reducer as charList } from './charList'
 
 export default history =>
   combineReducers({
-    characters,
+    charList,
     router: connectRouter(history)
   })
